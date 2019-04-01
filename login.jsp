@@ -1,4 +1,13 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%request.setCharacterEncoding("utf-8");
+      String Action=request.getParameter("Action");
+      if(Action!=null && Action.equals("Login")){
+String User =request.getParameter("User");
+String Pwd=request.getParameter("Pwd");
+out.println("<script>alert("+User+");</script>");
+out.println("<script>alert("+Pwd+");</script>");
+}
+%>
 <!DOCTYPE html>
 <html>
 <head>

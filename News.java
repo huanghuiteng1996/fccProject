@@ -7,7 +7,7 @@ import java.sql.Statement;
 public class News {
 	DBConnection DBConn=new DBConnection();
 	Function Fun=new Function();
-	
+
 	public String ListNews(String toPage,String pageNum) {
 		try {
 			Connection Conn=DBConn.getConn();
@@ -26,18 +26,18 @@ public class News {
 		}
 	}
 	public String AddNews(String [] newsData)
-	 {			
+	 {
 		try
 			{
-			Connection Conn = DBConn.getConn();					
-			Statement stmt = Conn.createStatement();				
-			ResultSet rs = null;								
-			String sSql = "select * from News order by NewsID desc";		
-		rs = stmt.executeQuery(sSql); 					      		
-		String result=Fun.AddNews(Conn,stmt,rs,newsData);		  		
-		return result;									
+			Connection Conn = DBConn.getConn();
+			Statement stmt = Conn.createStatement();
+			ResultSet rs = null;
+			String sSql = "select * from News order by NewsID desc";
+		rs = stmt.executeQuery(sSql);
+		String result=Fun.AddNews(Conn,stmt,rs,newsData);
+		return result;
 		}catch(Exception e){
-		return "ÃÌº” ß∞‹";							 	
+		return "Ê∑ªÂä†Â§±Ë¥•";
 	}
 }
 

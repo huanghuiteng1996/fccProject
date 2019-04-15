@@ -52,4 +52,14 @@ public class News {
 		}
 	}
 
+	public String EditNews(String[] newsData, String newsId) {
+		try {
+			Connection Conn = DBConn.getConn();
+			Statement stmt = Conn.createStatement();
+			return Fun.EditNews(Conn, stmt, newsData, newsId);
+		} catch (Exception e) {
+			return "数据库连接失败!";
+		}
+	}
+
 }

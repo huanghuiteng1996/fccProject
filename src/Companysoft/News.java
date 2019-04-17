@@ -61,5 +61,25 @@ public class News {
 			return "数据库连接失败!";
 		}
 	}
+	public String ListNewsFront(String toPage,String pageNum)
+    {			
+		try
+    	{
+    		Connection Conn = DBConn.getConn();						
+	    	Statement stmt = Conn.createStatement();					
+	    	ResultSet rs = null;								
+    		StringBuffer resultData = new StringBuffer();					
+    		String sSql = "select * from News order by NewsID desc";			
+	    	rs = stmt.executeQuery(sSql);							
+	    	resultData=Fun.ListNewsFront(resultData,rs,toPage,pageNum);		
+		rs.close();									
+    		stmt.close();									
+    		Conn.close();									
+    		return resultData.toString();							
+    	}catch(Exception e)
+        {
+            return "No";									
+        }
+    }
 
 }
